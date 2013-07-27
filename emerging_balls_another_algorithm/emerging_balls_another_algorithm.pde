@@ -43,8 +43,8 @@ class Circle {
   Circle() {
     x = random(width);
     y = random(height);
-    xmove = random(2) - 1;
-    ymove = random(2) - 1;
+    xmove = x / y - 1;
+    ymove = y / x - 1;
     
     radius = random(20) + 5;
     
@@ -68,11 +68,12 @@ class Circle {
   void collision(Circle otherCirc) {
           oldXMove = this.xmove;
           oldYMove = this.ymove;
+          
 //          oldRadius = this.radius;
           
           weightRatio = this.radius / otherCirc.radius;
           
-          this.xmove = -1 * otherCirc.xmove / weightRatio;
+          this.xmove = -1 * otherCirc.xmove * weightRatio;
           this.ymove = -1 * otherCirc.ymove * weightRatio;
 //          this.radius = otherCirc.radius;
           
@@ -85,7 +86,7 @@ class Circle {
 //            radius += weightRatio * otherCirc.radius;
 //          }
 //          
-          otherCirc.xmove = oldXMove * weightRatio;
+          otherCirc.xmove = oldXMove / weightRatio;
           otherCirc.ymove = oldYMove / weightRatio;
 //          otherCirc.radius = oldRadius;
   }

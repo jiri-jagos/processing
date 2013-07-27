@@ -3,7 +3,7 @@ int _cellSize = 10;
 int _numX, _numY;
 
 void setup() {
-  size(500, 300);
+  size(500, 500);
   _numX = floor(width / _cellSize);
   _numY = floor(height / _cellSize);
   restart();
@@ -72,7 +72,7 @@ class Cell {
     x = ex * _cellSize;
     y = why * _cellSize;
     
-    nextState = ((x / width) + (y / height) * 14);
+    nextState = ((x / width) + (y / height) * width / height);
     state = nextState;
     neighbors = new Cell[0];
   }
