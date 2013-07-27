@@ -19,8 +19,8 @@ void setup() {
     
     mandalas[i] = new simpleMandala(
       new PVector(row * mandalaWidth, col * mandalaHeight),
-      int(random(10,20)),
-      int(random(10,20)),
+      int(random(5, 50)),
+      int(random(5, 50)),
       mandalaWidth / 2,
       random(0.3, 0.7),
       random(mandalaWidth / rows, mandalaWidth / 2),

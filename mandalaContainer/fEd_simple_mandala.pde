@@ -63,7 +63,7 @@ class simpleMandala {
   
   void display() {
     pushMatrix();
-    translate(this.center.x, this.center.y);
+    translate(this.center.x + this.outerRadius, this.center.y + this.outerRadius);
     
     for (int i = 0; i < this.steps; i++) {
       stroke(255 - this.shadeRatio * i, 100);
