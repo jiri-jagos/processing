@@ -5,11 +5,11 @@ void setup(){
   background(255);
   x=width / 2;
   y=height / 2;
-  radius = width / 2;
+  radius = width / 4;
   pushMatrix();
   translate(x, y);
   int pts = 6000;
-  int rots = 100;
+  int rots = 10;
   float fall_off = .9999;
 
   cellW = cellH = 2; 
@@ -71,6 +71,6 @@ boolean isPrime(int val) {
 }
 void drawFrame() {
   noFill();
-  strokeWeight(20);
-  rect(x - radius - 1, y - radius - 1, radius * 2, radius * 2);
+  strokeWeight(3);
+  rect(0, 0, width, height);
 }

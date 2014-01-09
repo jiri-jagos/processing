@@ -32,7 +32,7 @@ void draw() {
 
 void collide() {
   
-  cornerRadiusOffset = w / 2 / cos(PI / 4) - w / 2;
+  cornerRadiusOffset = 0.41421354 * w / 2;
   dynamicRadius = abs(sin(collisionTheta) * cornerRadiusOffset);
   
   if ((x > (width - dynamicRadius - w / 2)) || (x < (dynamicRadius + w / 2))) {
