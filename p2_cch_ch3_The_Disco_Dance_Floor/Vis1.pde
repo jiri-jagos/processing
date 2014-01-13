@@ -16,7 +16,7 @@ public class Vis1 implements iVisualizer {
   
   public void tick() {
     count++;
-    if (count < 4) {
+    if (count < gridCenter) {
       return;
     }
     
@@ -29,7 +29,7 @@ public class Vis1 implements iVisualizer {
     
     for (int x = 0; x < gridSize; x++) {
       for (int y = 0; y < gridSize; y++) {
-        tiles[x][y] = 255 * ((x + y + p) % gridSize);
+        tiles[x][y] = 255 * ((x + y + p) % 2);
       }
     }
   }

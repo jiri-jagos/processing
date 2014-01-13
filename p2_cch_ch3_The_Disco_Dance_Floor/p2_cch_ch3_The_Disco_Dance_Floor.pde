@@ -19,9 +19,18 @@ void setup() {
   minim = new Minim(this);
   
 //  player = minim.loadFile("01-dun_an_doras-the_lowlands_of_holland-piad.mp3", 256);
-  player = minim.loadFile("01. Rabovali Turci.mp3", 512);
+  player = minim.loadFile("01. Rabovali Turci.mp3", 256);
+  
+  Vis4 vis4 = new Vis4();
+  player.addListener(vis4);
+  
+  Vis5 vis5 = new Vis5(player);
+  player.addListener(vis5);
   
   visualizers = new iVisualizer[] {
+    vis5,
+    vis4,
+    new Vis3(),
     new Vis2(),
     new Vis1()
   };
@@ -49,7 +58,7 @@ void setup() {
         vis.init();
         vis.setActive(true);
         visIndex++;
-        delay(1000);
+        delay(8000);
       }
     }
   };

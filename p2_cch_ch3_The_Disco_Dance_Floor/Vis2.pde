@@ -1,6 +1,6 @@
 public class Vis2 implements iVisualizer {
   int px = 0;
-  int count = 0;
+  private int count = 0;
   
   public Vis2() {
     init();
@@ -8,14 +8,14 @@ public class Vis2 implements iVisualizer {
   
   public void tick() {
     count++;
-    if (count < 4) return;
+    if (count < gridCenter) return;
     
     count = 0;
     for (int i = 0; i < gridSize; i++) {
       tiles[min((gridSize - 1), px)][i] = 255;
     }
     
-    if (px <= gridSize && tiles[gridSize - 1][gridSize - 1] != 0) {
+    if (px >= gridSize && tiles[gridSize - 1][gridSize - 1] != 0) {
       init();
     } else {
       px += 1;
@@ -23,6 +23,8 @@ public class Vis2 implements iVisualizer {
   }
   
   public void init() {
+    px = 0;
+   
     for (int x = 0; x < gridSize; x++) {
       for (int y = 0; y < gridSize; y++) {
         tiles[x][y] = 0;
